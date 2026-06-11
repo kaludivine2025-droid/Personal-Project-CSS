@@ -1,0 +1,231 @@
+/* --- 1. BASIC SETUP --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Required for smooth scrolling links [cite: 22] */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Recommended body font [cite: 108] */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif; /* Recommended heading font [cite: 107] */
+    margin-bottom: 20px;
+}
+
+/* --- 2. NAVIGATION (STICKY) --- */
+#navbar {
+    position: sticky; /* Keeps menu at the top [cite: 18, 23] */
+    top: 0;
+    display: flex; /* Flexbox for layout [cite: 11, 91] */
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: #2c3e50; /* Midnight Blue */
+    color: white;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #3498db; /* Sky Blue hover effect [cite: 94] */
+}
+
+/* --- 3. HERO SECTION --- */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+}
+
+.hero-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Makes photo circular [cite: 30] */
+    object-fit: cover;
+    margin: 3px 0;
+    border: 5px solid #2c3e50;
+    align-content: center;
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s; /* Smooth transition [cite: 94] */
+}
+
+.cta-btn:hover {
+    transform: scale(1.05); /* Subtle pop effect */
+}
+
+/* --- 4. ABOUT SECTION (GRID) --- */
+#about {
+    padding: 80px 10%;
+    background: #fff;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- 5. SKILLS GRID --- */
+#skills {
+    padding: 80px 10%;
+    background: #ecf0f1;
+}
+
+.skills-grid {
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   align-content: space-around;
+   gap: 30px;
+}
+
+.skill-card {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* Hover shadow [cite: 47, 94] */
+}
+
+/* --- 6. PROJECTS SHOWCASE (GRID) --- */
+#projects {
+    padding: 80px 10%;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for desktop [cite: 56] */
+    gap: 30px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.project-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3, .project-card p {
+    padding: 15px;
+}
+
+/* --- 7. CONTACT FORM --- */
+#contact {
+    padding: 80px 10%;
+    background: #2c3e50;
+    color: white;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#contact-form input, #contact-form textarea {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+#contact-form button {
+    padding: 15px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: #3498db;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* --- 8. FOOTER --- */
+footer {
+    padding: 30px;
+    text-align: center;
+    background: #1a252f; /* Different background for footer [cite: 79] */
+    color: white;
+}
+
+/* --- 9. RESPONSIVE MEDIA QUERIES --- */
+
+/* Tablet & Mobile Breakpoints [cite: 98, 99] */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* 1 column for tablet/mobile [cite: 56] */
+    }
+
+}
+
+@media (max-width: 767px) {
+    #navbar {
+        flex-direction: column; /* Stack logo and links on mobile */
+    }
+    .nav-links {
+        padding-top: 10px;
+    }
+    .nav-links li a {
+        margin: 0 10px;
+    }
+
+}
